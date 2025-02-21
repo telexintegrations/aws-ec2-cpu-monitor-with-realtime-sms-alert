@@ -1,19 +1,19 @@
-#EC2 CPU Usage Monitoring and SMS Alert Integration
-##Overview
+# EC2 CPU Usage Monitoring and SMS Alert Integration
+## Overview
 This API monitors the CPU usage of an AWS EC2 instance using CloudWatch and sends alerts via Twilio SMS and a specified channel. It integrates with Telex, requiring two JSON integrations:
 
 integration.json – Sends messages to a channel.
 interval-integration.json – Sends channel messages to SMS.
 The service uses an AWS IAM role to retrieve CloudWatch metrics, assume necessary permissions, and trigger alerts when CPU usage exceeds 85%.
 
-#Features
+# Features
 ✅ EC2 CPU Usage Monitoring – Fetches CPU utilization using AWS CloudWatch.
 ✅ AWS IAM Role Assumption – Uses STS to assume roles for cross-account access.
 ✅ Telex Integration – Supports dual integrations for both channel and SMS notifications.
 ✅ Twilio SMS Alerts – Sends SMS when CPU usage exceeds 85%.
 ✅ CORS Handling – Allows requests from any domain for seamless API usage.
 
-#Technology Stack
+# Technology Stack
 FastAPI – Web framework for API development.
 AWS CloudWatch – Fetches EC2 instance CPU metrics.
 AWS STS (Security Token Service) – Assumes IAM roles.
@@ -64,7 +64,7 @@ Response Examples
 {
   "detail": "Error retrieving CPU usage: <error message>"
 }
-#Telex Integration Activation
+# Telex Integration Activation
 To activate integrations in Telex, follow these steps:
 
 1️⃣ Activate interval-integration.json (Channel Messaging Integration)
@@ -75,7 +75,7 @@ Upload the integration.json file and configure it to forward channel messages to
 
 Once both integrations are active, the system will notify the channel and forward messages as SMS.
 
-##Setup Instructions
+## Setup Instructions
 Requirements
 Python 3.7+
 AWS account with CloudWatch permissions
