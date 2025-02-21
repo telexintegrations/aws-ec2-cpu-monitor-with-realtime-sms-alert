@@ -15,15 +15,25 @@ The service uses an AWS IAM role to retrieve CloudWatch metrics, assume necessar
 
 # Technology Stack
 FastAPI – Web framework for API development.
+
 AWS CloudWatch – Fetches EC2 instance CPU metrics.
+
 AWS STS (Security Token Service) – Assumes IAM roles.
+
 Twilio API – Sends SMS notifications.
+
 Python – Core programming language.
+
 IAM Role Setup
+
+
+
 Before integrating with AWS, configure an IAM role with the required permissions:
 
 Go to AWS IAM Console → Roles → Create Role.
+
 Select Another AWS account and enter your AWS Account ID.
+
 Add the following trust policy to allow the necessary AWS user to assume the role:
 
 
@@ -63,9 +73,13 @@ Add the following trust policy to allow the necessary AWS user to assume the rol
 }
 
 Attach the CloudWatchReadOnlyAccess policy to the role.
+
 Save the Role ARN.
+
 API Endpoint
+
 GET /tick/{account_id}/{role_name}/{instance_id}
+
 Retrieves CPU usage and sends an alert if usage exceeds 85%.
 
 Parameter	Type	Description
@@ -109,19 +123,28 @@ Once both integrations are active, the system will notify the channel and forwar
 
 ## Setup Instructions
 Requirements
+
 Python 3.7+
+
 AWS account with CloudWatch permissions
+
 Twilio account for SMS alerts
+
 Install Dependencies
+
 Clone the repository and install dependencies:
 
 
 git clone https://github.com/telexintegrations/aws-ec2-cpu-monitor-with-realtime-sms-alert.git
+
 pip install -r requirements.txt
+
 Run Locally
+
 Start the FastAPI server using Uvicorn:
 
 uvicorn main:app --reload
+
 API will be available at http://127.0.0.1:8000.
 
 Example Request:
