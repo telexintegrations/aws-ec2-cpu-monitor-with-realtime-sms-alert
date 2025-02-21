@@ -28,16 +28,38 @@ Add the following trust policy to allow the necessary AWS user to assume the rol
 
 
 {
+
+
     "Version": "2012-10-17",
+
+
     "Statement": [
+
+
         {
+
+
             "Effect": "Allow",
+
+
             "Principal": {
+
+
                 "AWS": "arn:aws:iam::277707100860:user/assume-role-user"
+
+
             },
+
+
             "Action": "sts:AssumeRole"
+
+
         }
+
+
     ]
+
+
 }
 
 Attach the CloudWatchReadOnlyAccess policy to the role.
@@ -56,13 +78,23 @@ Response Examples
 
 
 {
+
+
  "CPU usage for instance i-03f21cd8e811c7936 is 3.834224304675515% at 20:    12:22."
+
+
 }
+
+
 🚨 Alert Triggered (202 OK)
 
 
 {
+
+
   "detail": "Error retrieving CPU usage: <error message>"
+
+
 }
 # Telex Integration Activation
 To activate integrations in Telex, follow these steps:
